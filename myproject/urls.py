@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import include, path
-
+from . import SimpleView
 urlpatterns = [
     path('myapp/', include('myapp.urls')),
     path('categories/',include('categories.urls')),
     path('product/', include('product.urls')),
+    path('',SimpleView.htmlpage)
 ]
